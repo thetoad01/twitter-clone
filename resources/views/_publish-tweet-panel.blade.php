@@ -1,5 +1,5 @@
 <div class="border border-blue-400 rounded-lg py-6 px-6 mb-8">
-    <form action="/tweets" method="POST">
+    <form action="{{ route('tweets.store') }}" method="POST">
         @csrf
 
         <textarea name="body" id="body" class="w-full" placeholder="What's the directive?"></textarea>
