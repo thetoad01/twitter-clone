@@ -2,10 +2,10 @@
 
 ## Project Dependencies
 
-Laravel ^7.0
-MySQL
-VueJS
-Tailwind CSS
+Laravel ^7.0  
+MySQL  
+VueJS  
+Tailwind CSS  
 
 ## Security Vulnerabilities
 
