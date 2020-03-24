@@ -72,8 +72,6 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laracasts.com">Laracasts</a>
-
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
