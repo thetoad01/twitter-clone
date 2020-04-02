@@ -2,7 +2,14 @@
 
 @section('content')
     <header class="mb-6 relative">
-        <img src="https://via.placeholder.com/778x200.jpg" class="rounded-lg mb-2" alt="profile banner">
+        <div class="relative mb-4">
+            <img src="https://via.placeholder.com/778x200.jpg" class="rounded-lg mb-2" alt="profile banner">
+
+            <img src="{{ $user->avitar }}" alt="{{ $user->name }} avitar"
+                class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                style="left: 50%"
+                width="150">
+        </div>
 
         <div class="flex justify-between items-center mb-4">
             <div>
@@ -10,9 +17,10 @@
                 <p class="text-sm">{{ $user->created_at->diffForHumans() }}</p>
             </div>
 
-            <div>
+            <div class="flex">
                 <a href="#" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
-                <a href="#" class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs">Follow Me</a>
+
+                <x-follow-button :user="$user"></x-follow-button>
             </div>
         </div>
 
@@ -20,10 +28,6 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, temporibus perspiciatis molestiae voluptates laudantium ipsa
             asperiores suscipit quis! Repudiandae ipsam hic praesentium incidunt eligendi velit. Omnis qui laudantium suscipit quas.
         </p>
-
-        <img src="{{ $user->avitar }}" alt=""
-            class="rounded-full mr-2 absolute"
-            style="width: 150px; left: calc(50% - 75px); top: 37%;">
     </header>
 
     @include('_timeline')
