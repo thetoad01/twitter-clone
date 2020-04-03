@@ -14,4 +14,11 @@ class ProfilesController extends Controller
             'tweets' => $user->tweets,
         ]);
     }
+
+    public function edit(User $user)
+    {
+        return view('profiles.edit', [
+            'user' => $user,
+        ]);
+    }
 }
