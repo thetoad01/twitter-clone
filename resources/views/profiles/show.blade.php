@@ -5,7 +5,7 @@
         <div class="relative mb-4">
             <img src="https://via.placeholder.com/778x200.jpg" class="rounded-lg mb-2" alt="profile banner">
 
-            <img src="{{ $user->avitar }}" alt="{{ $user->name }} avitar"
+            <img src="{{ $user->avatar }}" alt="{{ $user->name }} avatar"
                 class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
                 style="left: 50%"
                 width="150">
