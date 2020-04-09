@@ -27,7 +27,7 @@
             <label for="avatar" class="block mb-2 uppercase font-bold text-sx text-gray-700">Avatar</label>
 
             <div class="flex">
-                <input type="file" name="avatar" id="avatar" class="border border-gray-400 p-2 w-full" value="{{ $user->avatar }}" required>
+                <input type="file" name="avatar" id="avatar" class="border border-gray-400 p-2 w-full" value="{{ $user->avatar }}">
 
                 <img src="{{ $user->avatar }}" alt="{{ $user->name }} avatar"
                     class="rounded-full mr-2"
