@@ -12,7 +12,7 @@
         </div>
 
         <div class="flex justify-between items-center mb-4">
-            <div>
+            <div style="max-width: 275px">
                 <h3 class="font-bold text-2xl mb-0">{{ $user->name }}</h3>
                 <p class="text-sm">{{ $user->created_at->diffForHumans() }}</p>
             </div>
@@ -32,5 +32,7 @@
         </p>
     </header>
 
-    @include('_timeline')
+    @include('_timeline', [
+        'tweets' => $tweets
+    ])
 @endsection

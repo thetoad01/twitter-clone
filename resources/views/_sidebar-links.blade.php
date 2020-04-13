@@ -20,7 +20,12 @@
     <li>
         <a href="{{ current_user()->path() }}" class="font-bold text-lg mb-4 block">Profile</a>
     </li>
-    <li>
-        <a href="#" class="font-bold text-lg mb-4 block">More</a>
-    </li>
+    @auth
+        <li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="font-bold text-lg block">Logout</button>
+            </form>
+        </li>
+    @endauth
 </ul>
