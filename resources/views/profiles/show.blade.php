@@ -30,6 +30,24 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, temporibus perspiciatis molestiae voluptates laudantium ipsa
             asperiores suscipit quis! Repudiandae ipsam hic praesentium incidunt eligendi velit. Omnis qui laudantium suscipit quas.
         </p>
+
+        @can ('edit', $user)
+            <div class="flex flex-row-reverse text-blue-500 mt-2">
+                <button class="flex" title="edit description">
+                    <svg viewBox="0 0 20 20" class="mr-1 w-3 mt-1">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g class="fill-current">
+                                <path d="M12.2928932,3.70710678 L0,16 L0,20 L4,20 L16.2928932,7.70710678 L12.2928932,3.70710678 Z M13.7071068,2.29289322 L16,0 L20,4 L17.7071068,6.29289322 L13.7071068,2.29289322 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                    </svg>
+
+                    <div class="text-xs mr-2">
+                        Edit
+                    </div>
+                </button>
+            </div>
+        @endcan
     </header>
 
     @include('_timeline', [
