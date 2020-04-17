@@ -26,7 +26,7 @@
     <section class="px-4 py-2 mb-2">
         <header class="container mx-auto">
             <h1>
-                <img src="/images/logo.svg" alt="Tweety logo">
+                <a href="{{ route('welcome') }}"><img src="/images/logo.svg" alt="Tweety logo"></a>
             </h1>
         </header>
     </section>

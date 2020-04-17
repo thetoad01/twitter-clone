@@ -55,7 +55,7 @@ class User extends Authenticatable
             ->orWhere('user_id', $this->id)
             ->withLikes()
             ->latest()
-            ->paginate(50);
+            ->paginate(25);
     }
 
     public function tweets()
