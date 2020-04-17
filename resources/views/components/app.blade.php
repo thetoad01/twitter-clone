@@ -1,6 +1,6 @@
 <x-master>
     <section>
-        <main class="container mx-auto">
+        <main class="container mx-auto mb-4">
             <div class="d-flex justify-content-between">
                 <div class="w-25 pr-3">
                     @include('_sidebar-links')

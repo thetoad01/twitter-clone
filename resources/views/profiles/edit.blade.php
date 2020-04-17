@@ -1,78 +1,82 @@
 <x-app>
-    <form action="{{ $user->path() }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PATCH')
+    <div class="card card-body">
+        <h1>Edit User Info</h1>
 
-        <div class="mb-6">
-            <label for="name" class="block mb-2 uppercase font-bold text-sx text-gray-700">Name</label>
+        <form action="{{ $user->path() }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
 
-            <input type="text" name="name" id="name" class="border border-gray-400 p-2 w-full" value="{{ $user->name }}" required>
+            <div class="form-group">
+                <label for="name" class="text-uppercase text-secondary">Name</label>
 
-            @error('name')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
+                <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}" required>
 
-        <div class="mb-6">
-            <label for="username" class="block mb-2 uppercase font-bold text-sx text-gray-700">Username</label>
-
-            <input type="text" name="username" id="username" class="border border-gray-400 p-2 w-full" value="{{ $user->username }}" required>
-
-            @error('username')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
-
-        <div class="mb-6">
-            <label for="avatar" class="block mb-2 uppercase font-bold text-sx text-gray-700">Avatar</label>
-
-            <div class="flex">
-                <input type="file" name="avatar" id="avatar" class="border border-gray-400 p-2 w-full" value="{{ $user->avatar }}">
-
-                <img src="{{ $user->avatar }}" alt="{{ $user->name }} avatar"
-                    class="rounded-full mr-2"
-                    width="40">
+                @error('name')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
             </div>
 
-            @error('avatar')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
+            <div class="form-group">
+                <label for="username" class="text-uppercase text-secondary">Username</label>
 
-        <div class="mb-6">
-            <label for="email" class="block mb-2 uppercase font-bold text-sx text-gray-700">Email</label>
+                <input type="text" name="username" id="username" class="form-control" value="{{ $user->username }}" required>
 
-            <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" value="{{ $user->email }}" required>
+                @error('username')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
 
-            @error('email')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
+            <div class="form-group">
+                <label for="avatar" class="text-uppercase text-secondary">Avatar</label>
 
-        <div class="mb-6">
-            <label for="password" class="block mb-2 uppercase font-bold text-sx text-gray-700">Password</label>
+                <div class="d-flex">
+                    <input type="file" name="avatar" id="avatar" class="form-control" value="{{ $user->avatar }}">
 
-            <input type="password" name="password" id="password" class="border border-gray-400 p-2 w-full" required>
+                    <img src="{{ $user->avatar }}" alt="{{ $user->name }} avatar"
+                        class="rounded-lg mr-2"
+                        width="40">
+                </div>
 
-            @error('password')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
+                @error('avatar')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <div class="mb-6">
-            <label for="password_confirmation" class="block mb-2 uppercase font-bold text-sx text-gray-700">Confirm Password</label>
+            <div class="form-group">
+                <label for="email" class="text-uppercase text-secondary">Email</label>
 
-            <input type="password" name="password_confirmation" id="password_confirmation" class="border border-gray-400 p-2 w-full">
+                <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
 
-            @error('password_confirmation')
-                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-            @enderror
-        </div>
+                @error('email')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
 
-        <div class="mb-6">
-            <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4">Submit</button>
+            <div class="form-group">
+                <label for="password" class="text-uppercase text-secondary">Password</label>
 
-            <a href="{{ $user->path() }}" class="hover:underline">Cancel</a>
-        </div>
-    </form>
+                <input type="password" name="password" id="password" class="form-control" required>
+
+                @error('password')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirmation" class="text-uppercase text-secondary">Confirm Password</label>
+
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
+
+                @error('password_confirmation')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm mr-3">Submit</button>
+
+                <a href="{{ $user->path() }}" class="btn btn-link btn-sm">Cancel</a>
+            </div>
+        </form>
+    </div>
 </x-app>

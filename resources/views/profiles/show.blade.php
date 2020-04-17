@@ -1,25 +1,23 @@
-@extends('layouts.app')
-
-@section('content')
-    <header class="mb-6 relative">
-        <div class="relative mb-4">
-            <img src="https://via.placeholder.com/778x200.jpg" class="rounded-lg mb-2" alt="profile banner">
+<x-app>
+    <header class="mb-4 position-relative">
+        <div class="position-relative mb-4">
+            <img src="https://via.placeholder.com/555x200.jpg" class="rounded-lg mb-2" alt="profile banner">
 
             <img src="{{ $user->avatar }}" alt="{{ $user->name }} avatar"
-                class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
-                style="left: 50%"
+                class="rounded position-absolute"
+                style="left: 35%; top: 60%"
                 width="150">
         </div>
 
-        <div class="flex justify-between items-center mb-4">
-            <div style="max-width: 275px">
-                <h3 class="font-bold text-2xl mb-0">{{ $user->name }}</h3>
-                <p class="text-sm">{{ $user->created_at->diffForHumans() }}</p>
+        <div class="d-flex justify-content-between align-center mb-3">
+            <div style="max-width: 210px">
+                <h3 class="font-bold mb-0">{{ $user->name }}</h3>
+                <p class="small">{{ $user->created_at->diffForHumans() }}</p>
             </div>
 
             <div class="flex">
                 @can ('edit', $user)
-                    <a href="{{ $user->path('edit') }}" class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
+                    <a href="{{ $user->path('edit') }}" class="btn btn-sm btn-outline-primary">Edit User</a>
                 @endcan
 
                 <x-follow-button :user="$user"></x-follow-button>
@@ -32,20 +30,10 @@
         </p>
 
         @can ('edit', $user)
-            <div class="flex flex-row-reverse text-blue-500 mt-2">
-                <button class="flex" title="edit description">
-                    <svg viewBox="0 0 20 20" class="mr-1 w-3 mt-1">
-                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g class="fill-current">
-                                <path d="M12.2928932,3.70710678 L0,16 L0,20 L4,20 L16.2928932,7.70710678 L12.2928932,3.70710678 Z M13.7071068,2.29289322 L16,0 L20,4 L17.7071068,6.29289322 L13.7071068,2.29289322 Z" id="Combined-Shape"></path>
-                            </g>
-                        </g>
-                    </svg>
-
-                    <div class="text-xs mr-2">
-                        Edit
-                    </div>
-
+            <div class="col-12 text-right">
+                <button class="btn btn-sm btn-link" title="edit description">
+                    <i class="fas fa-pencil-alt"></i>
+                    Edit
                 </button>
             </div>
         @endcan
@@ -54,4 +42,4 @@
     @include('_timeline', [
         'tweets' => $tweets
     ])
-@endsection
+</x-app>

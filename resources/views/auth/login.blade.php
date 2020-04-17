@@ -1,42 +1,42 @@
 <x-master>
-    <div class="container mx-auto flex justify-center">
-        <div class="px-16 py-4 bg-gray-400 rounded-lg">
-            <div class="col-md-8">
-                <div class="font-bold text-lg mb-4">{{ __('Login') }}</div>
+    <div class="container mx-auto d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-body bg-secondary text-white">
+                <div class="h3 font-weight-bold text-uppercase mb-4">Login</div>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-700">Email</label>
+                    <div class="form-group">
+                        <label for="email" class="text-uppercase text-white">Email</label>
 
-                        <input type="email" name="email" id="email" class="border border-gray-400 p-2 w-full" autocomplete="email" value="{{ old('email') }}" required>
+                        <input type="email" name="email" id="email" class="form-control" autocomplete="email" value="{{ old('email') }}" required>
 
                         @error('email')
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <div class="mb-6">
-                        <label for="password" class="block mb-2 uppercase font-bold text-xs text-gray-700">Password</label>
+                    <div class="form-group">
+                        <label for="password" class="text-uppercase text-white">Password</label>
 
-                        <input type="password" name="password" id="password" class="border border-gray-400 p-2 w-full" autocomplete="current-password" required>
+                        <input type="password" name="password" id="password" class="form-control" autocomplete="current-password" required>
 
                         @error('password')
-                            <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                            <p class="text-danger small">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <div class="mb-6">
+                    <div class="form-group">
                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} class="mr-1">
 
-                        <label for="remember" class="text-xs text-gray-700 font-bold uppercase">Remember Me</label>
+                        <label for="remember" class="small text-white">Remember Me</label>
                     </div>
 
-                    <div class="mb-6">
-                        <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-2">Login</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary shadow mr-4">Login</button>
 
-                        <a href="{{ route('password.request') }}" class="text-xs text-gray-700">Forgot Your Password?</a>
+                        <a href="{{ route('password.request') }}" class="small text-white">Forgot Your Password?</a>
                     </div>
                 </form>
             </div>
