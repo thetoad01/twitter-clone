@@ -45,6 +45,7 @@
                     <div class="text-xs mr-2">
                         Edit
                     </div>
+
                 </button>
             </div>
         @endcan

@@ -17,12 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/main.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-    <section class="px-8 py-4 mb-6">
+    <section class="px-4 py-2 mb-2">
         <header class="container mx-auto">
             <h1>
                 <img src="/images/logo.svg" alt="Tweety logo">
