@@ -5,7 +5,7 @@
 Laravel ^7.0  
 MySQL  
 VueJS  
-Tailwind CSS  
+Bootstrap  
 
 ## Security Vulnerabilities
 
